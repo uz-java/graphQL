@@ -11,3 +11,39 @@ public class GraphQlApplication {
     }
 
 }
+
+class Author{
+
+}
+
+class AuthorController{
+
+}
+
+interface AuthorRepository{
+
+}
+
+class AuthorUpdateDTO{
+
+}
+
+class Book{
+
+}
+
+class BookController{
+
+}
+
+interface BookRepository{
+
+}
+
+class Init{
+
+}
+
+enum Rating{
+
+}
