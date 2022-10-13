@@ -22,7 +22,7 @@ import java.sql.Timestamp;
 @Table(name = "book")
 public class Book {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
     private Integer pages;
