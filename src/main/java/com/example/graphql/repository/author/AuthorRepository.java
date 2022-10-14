@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @since 13/10/22 18:27 (Thursday)
  * graphQL/IntelliJ IDEA
  */
-public interface AuthorRepository extends JpaRepository<Author,Integer> {
+public interface AuthorRepository extends JpaRepository<Author,Long> {
 
 }

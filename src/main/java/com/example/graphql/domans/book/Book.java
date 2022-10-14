@@ -1,5 +1,6 @@
 package com.example.graphql.domans.book;
 
+import com.example.graphql.domans.author.Author;
 import com.example.graphql.enams.Rating;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,10 +24,13 @@ import java.sql.Timestamp;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String title;
     private Integer pages;
     private Rating rating;
+
+    @ManyToOne(targetEntity = Author.class, fetch = FetchType.LAZY)
+    private Author author;
 
     @CreatedDate
     @CreationTimestamp
