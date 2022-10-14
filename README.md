@@ -35,14 +35,20 @@ serves as a point of coordination for this effort.
 Looking for help? Find resources
 [from the community](https://graphql.org/community/).
 
-## datasource config
+## dependency for graphql spring
 
 ```
         
-    spring.datasource.url=jdbc:postgresql://localhost:5432/SpringMyProject
-spring.datasource.username=postgres
-spring.datasource.password=1
-spring.datasource.driver=org.postgresql.Driver
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-graphql</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.graphql</groupId>
+            <artifactId>spring-graphql-test</artifactId>
+            <scope>test</scope>
+        </dependency>
         
 ```
 
