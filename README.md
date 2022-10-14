@@ -35,7 +35,7 @@ serves as a point of coordination for this effort.
 Looking for help? Find resources
 [from the community](https://graphql.org/community/).
 
-## dependency for graphql spring
+## Dependency for graphql spring
 
 ```
         
@@ -51,6 +51,7 @@ Looking for help? Find resources
         </dependency>
         
 ```
+<br>
 
 ![page2](readme/page2.png)
 ![page3](readme/page3.png)
