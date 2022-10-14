@@ -1,1 +1,1 @@
-![readme/page1](page1.png)
+![page1](readme/page1.png)
