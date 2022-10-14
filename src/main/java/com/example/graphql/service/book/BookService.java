@@ -1,8 +1,10 @@
 package com.example.graphql.service.book;
 
+import com.example.graphql.domans.author.Author;
 import com.example.graphql.domans.book.Book;
 import com.example.graphql.dtos.book.BookCreateDTO;
 import com.example.graphql.mappers.book.BookMapper;
+import com.example.graphql.repository.author.AuthorRepository;
 import com.example.graphql.repository.book.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,8 +21,12 @@ import java.util.List;
 public class BookService {
     private final BookMapper bookMapper;
     private final BookRepository bookRepository;
-    public Long bookCreate(BookCreateDTO dto) {
+    private final AuthorRepository authorRepository;
+
+    public Integer bookCreate(BookCreateDTO dto) {
         Book book = bookMapper.fromCreateDTO(dto);
+        Author author = getAuthor(dto.getAuthorId());
+        book.setAuthor(author);
         Book bookSave = bookRepository.save(book);
         return bookSave.getId();
     }
@@ -28,5 +34,19 @@ public class BookService {
 
     public List<Book> findAll() {
         return bookRepository.findAll();
+    }
+
+    public Book getOne(Integer id) {
+        Book book = bookRepository.findById(id).orElseThrow(() -> {
+            throw new RuntimeException("Book not found");
+        });
+        return book;
+    }
+
+    public Author getAuthor(Integer id) {
+        Author author = authorRepository.findById(id).orElseThrow(() -> {
+            throw new RuntimeException("Author not found");
+        });
+        return author;
     }
 }

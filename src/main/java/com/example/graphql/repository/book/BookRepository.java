@@ -10,6 +10,6 @@ import java.util.List;
  * @since 13/10/22 18:27 (Thursday)
  * graphQL/IntelliJ IDEA
  */
-public interface BookRepository extends JpaRepository<Book,Long> {
-    List<Book> findAllByAuthor_Id(Long id);
+public interface BookRepository extends JpaRepository<Book,Integer> {
+    List<Book> findAllByAuthor_Id(Integer id);
 }

@@ -1,6 +1,7 @@
 package com.example.graphql.dtos.book;
 
-import com.example.graphql.enams.Rating;
+import com.example.graphql.domans.author.Author;
+import com.example.graphql.enums.Rating;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ import javax.persistence.Enumerated;
 public class BookCreateDTO {
     private String title;
     private Integer pages;
+    private Integer authorId;
     @Enumerated(EnumType.STRING)
     private Rating rating;
 }

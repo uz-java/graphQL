@@ -1,4 +1,4 @@
-package com.example.graphql.enams;
+package com.example.graphql.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 

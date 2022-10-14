@@ -2,12 +2,13 @@ package com.example.graphql.controller.author;
 
 import com.example.graphql.domans.author.Author;
 import com.example.graphql.dtos.author.AuthorCreateDTO;
+import com.example.graphql.dtos.author.AuthorUpdateDTO;
 import com.example.graphql.service.author.AuthorService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
+import org.springframework.graphql.data.method.annotation.SchemaMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,12 +23,21 @@ import java.util.List;
 public class AuthorController {
     private final AuthorService service;
 
-    public List<Author> findAll(){
+    @GetMapping
+    @SchemaMapping(typeName = "Query", value = "allAuthors")
+    public List<Author> allAuthors(){
         return service.findAll();
     }
+    @MutationMapping
     @PostMapping("/register")
-    public Long register(@RequestBody AuthorCreateDTO dto){
+    public Integer register(@RequestBody AuthorCreateDTO dto){
         return service.register(dto);
+    }
+
+    @MutationMapping
+    @PostMapping("/update")
+    public Author updateAuthor(@Argument AuthorUpdateDTO dto){
+        return service.save(dto);
     }
 
 }

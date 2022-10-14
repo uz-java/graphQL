@@ -1,10 +1,7 @@
 package com.example.graphql.domans.author;
 
 import com.example.graphql.domans.book.Book;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
@@ -22,18 +19,19 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "author")
+@Table(name = "book_author")
 public class Author {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String firstname;
     private String lastname;
+
     @OneToMany
     private List<Book> books;
-
-    @CreatedDate
-    @CreationTimestamp
-    @Column(columnDefinition = "timestamp default current_timestamp")
-    private Timestamp createdAt;
+    public Author(Integer id, String firstname, String lastname) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
 }
