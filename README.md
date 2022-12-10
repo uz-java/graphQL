@@ -8,6 +8,7 @@ The GraphQL specification is edited in the markdown files found in
 [`/spec`](./spec) the latest release of which is published at
 https://graphql.github.io/graphql-spec/.
 
+
 The latest draft specification can be found at
 https://graphql.github.io/graphql-spec/draft/ which tracks the latest commit to
 the main branch in this repository.
