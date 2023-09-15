@@ -21,9 +21,6 @@ for the particular referenced version.
 
 ## Overview
 
-This is a Working Draft of the Specification for GraphQL, a query language for
-APIs created by Facebook.
-
 The target audience for this specification is not the client developer, but
 those who have, or are actively interested in, building their own GraphQL
 implementations and tools.
